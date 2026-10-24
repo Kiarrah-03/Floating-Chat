@@ -1,0 +1,711 @@
+/* =========================
+   FLOATING CHAT BUTTON
+   ========================= */
+
+#fc-floating-btn {
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #687a70, #cdf1dc) !important;
+  color: #fff !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 2147483646 !important; /* Just below the chatbox */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+  font-size: 24px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+  padding: 0 !important;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+#fc-floating-btn:hover {
+  transform: scale(1.08) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35) !important;
+}
+#fc-floating-btn:active {
+  transform: scale(0.95) !important;
+}
+
+/* =========================
+   CHATBOX
+   ========================= */
+
+#fc-chatbox {
+  position: fixed;
+  top: 100px;
+  right: 24px;
+  width: 420px;
+  height: 440px;
+  min-width: 300px;
+  min-height: 340px;
+  max-width: calc(100vw - 20px);
+  max-height: calc(100vh - 20px);
+  background: #fff;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.18),
+    0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 2147483647;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  animation: fc-pop-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes fc-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+#fc-chatbox-header {
+  background: linear-gradient(135deg, #687a70, #cdf1dc) !important;
+  color: #fff !important;
+  padding: 14px 16px !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+#fc-chatbox-close {
+  background: transparent !important;
+  border: none !important;
+  color: #fff !important;
+  font-size: 20px !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+  padding: 4px 8px !important;
+  opacity: 0.85 !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 10 !important;
+}
+#fc-chatbox-close:hover {
+  opacity: 1 !important;
+}
+
+/* =========================
+   TABS
+   ========================= */
+
+#fc-chatbox-tabs {
+  display: flex !important;
+  background: #ffffff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  height: 54px !important;
+  flex-shrink: 0 !important;
+}
+
+.fc-tab {
+  position: relative !important;
+  flex: 1 !important;
+  border: none !important;
+  background: transparent !important;
+  color: #6b7280 !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  transition:
+    color 0.2s ease,
+    background 0.2s ease !important;
+  pointer-events: auto !important;
+}
+
+.fc-tab span:first-child {
+  font-size: 17px !important;
+  line-height: 1 !important;
+}
+.fc-tab:hover {
+  background: #f5f3ff !important;
+  color: #687a70 !important;
+}
+.fc-tab.active {
+  color: #687a70 !important;
+}
+
+.fc-tab.active::after {
+  content: "";
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 10% !important;
+  right: 10% !important;
+  height: 3px !important;
+  background: #687a70 !important;
+  border-radius: 3px 3px 0 0 !important;
+}
+
+/* =========================
+   TAB CONTENT
+   ========================= */
+
+#fc-tab-content {
+  flex: 1 !important;
+  min-height: 0 !important;
+  background: #f9fafb !important;
+  overflow: hidden !important;
+}
+
+.fc-tab-panel {
+  display: none;
+  height: 100%;
+  overflow: hidden;
+}
+
+#fc-chats.active {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#fc-media.active,
+#fc-shares.active,
+#fc-tools.active {
+  display: block !important;
+  height: 100% !important;
+  overflow-y: auto !important;
+}
+
+#fc-groups.active {
+  display: block !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+/* =========================
+   CHAT MESSAGES
+   ========================= */
+
+#fc-chatbox-messages {
+  flex: 1;
+  padding: 16px 18px;
+  overflow-y: auto;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fc-message {
+  margin-bottom: 0;
+}
+
+.fc-message {
+  padding: 8px 12px !important;
+  border-radius: 12px !important;
+  margin-bottom: 8px !important;
+  max-width: 80% !important;
+  font-size: 14px !important;
+  line-height: 1.4 !important;
+  word-wrap: break-word !important;
+}
+.fc-message.user {
+  background: #687a70 !important;
+  color: #fff !important;
+  margin-left: auto !important;
+  border-bottom-right-radius: 4px !important;
+}
+.fc-message.bot {
+  background: #e5e7eb !important;
+  color: #111827 !important;
+  border-bottom-left-radius: 4px !important;
+}
+
+/* =========================
+   INPUT AREA
+   ========================= */
+
+#fc-chatbox-input-row {
+  display: flex !important;
+  padding: 10px !important;
+  border-top: 1px solid #e5e7eb !important;
+  background: #fff !important;
+  gap: 8px !important;
+  flex-shrink: 0 !important;
+}
+
+#fc-chatbox-input {
+  flex: 1 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+  padding: 10px 12px !important;
+  font-size: 14px !important;
+  outline: none !important;
+  font-family: inherit !important;
+  color: #111827 !important;
+  min-width: 0 !important;
+}
+#fc-chatbox-input:focus {
+  border-color: #cdf1dc !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+}
+
+#fc-chatbox-send {
+  background: linear-gradient(135deg, #687a70, #cdf1dc) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 0 14px !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  font-family: inherit !important;
+}
+#fc-chatbox-send:hover {
+  filter: brightness(1.1) !important;
+}
+
+/* =========================
+   DROP ZONES & SAVED ITEMS
+   ========================= */
+
+.fc-drop-zone {
+  margin: 12px;
+  padding: 20px;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  text-align: center;
+  color: #6b7280;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-paste-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #687a70, #cdf1dc);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: filter 0.2s;
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+.fc-paste-btn:hover {
+  filter: brightness(1.1);
+}
+
+.fc-drop-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.fc-drop-zone h3 {
+  margin: 0 0 4px;
+  color: #374151;
+  font-size: 14px;
+}
+.fc-drop-zone p {
+  margin: 0;
+  font-size: 12px;
+}
+
+.fc-saved-list {
+  padding: 0 12px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fc-saved-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.fc-saved-item-icon {
+  width: 32px;
+  height: 32px;
+  background: #ede9fe;
+  color: #98caad;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.fc-saved-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.fc-saved-item-title {
+  color: #687a70;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.fc-saved-item-title:hover {
+  text-decoration: underline;
+}
+.fc-saved-item-url {
+  color: #9ca3af;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fc-delete-link-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.fc-delete-link-btn:hover {
+  color: #ef4444;
+  background: #fef2f2;
+}
+
+/* =========================
+   EMPTY TAB CONTENT
+   ========================= */
+
+.fc-empty-tab {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+}
+.fc-tab-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #ede9fe;
+  color: #98caad;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.fc-empty-tab h3 {
+  margin: 0 0 6px;
+  color: #374151;
+  font-size: 16px;
+}
+.fc-empty-tab p {
+  margin: 0;
+  max-width: 230px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================
+   TOOLS TAB
+   ========================= */
+
+.fc-tools-container {
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 24px;
+}
+
+.fc-tool-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.fc-tool-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #ede9fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.fc-tool-info {
+  flex: 1;
+  min-width: 0;
+}
+.fc-tool-info h3 {
+  margin: 0 0 2px;
+  color: #374151;
+  font-size: 14px;
+}
+.fc-tool-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.fc-tool-button {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: linear-gradient(135deg, #66796e, #cdf1dc);
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: inherit;
+  transition: filter 0.2s;
+}
+.fc-tool-button:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+.fc-tool-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SNIPPET RESULT
+   ========================= */
+
+.fc-snippet-result {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 12px;
+  color: #4b5563;
+}
+.fc-snippet-result p {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+.fc-snippet-result img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.fc-download-button {
+  display: block;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  background: #ede9fe;
+  color: #83a08f;
+  font-weight: 600;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+.fc-download-button:hover {
+  background: #ddd6fe;
+}
+
+/* =========================
+   TOOLS EXPANSION STYLES
+   ========================= */
+
+.fc-tool-expand {
+  display: none;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: -5px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #cdf1dc;
+}
+.fc-tool-expand p {
+  margin: 0 0 5px;
+}
+
+#fc-notes-textarea {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 12px;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+#fc-notes-textarea:focus {
+  border-color: #cdf1dc;
+}
+
+/* =========================
+   SCREENSHOT OVERLAY
+   ========================= */
+
+#fc-screenshot-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2147483647;
+  cursor: crosshair;
+  user-select: none;
+}
+
+#fc-selection-box {
+  position: absolute;
+  border: 2px dashed #fff;
+  background: rgba(255, 255, 255, 0.15);
+  display: none;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   SAVE DIALOG
+   ========================= */
+
+#fc-save-dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fc-save-dialog-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 80%;
+  max-width: 260px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.fc-save-dialog-content h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #111827;
+}
+
+#fc-save-dialog-url {
+  margin: 0 0 16px;
+  font-size: 11px;
+  color: #6b7280;
+  word-break: break-all;
+}
+
+.fc-save-dialog-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fc-save-option {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #687a70, #cdf1dc);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.fc-save-option:hover {
+  filter: brightness(1.1);
+}
+
+.fc-save-cancel {
+  background: transparent;
+  border: none;
+  color: #000000;
+  font-size: 12px;
+  cursor: pointer;
+  margin-top: 4px;
+  padding: 4px;
+}
+
+.fc-save-cancel:hover {
+  color: #ef4444;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 480px) {
+  #fc-chatbox {
+    right: 10px !important;
+    bottom: 80px !important;
+    width: calc(100vw - 20px) !important;
+    height: 70vh !important;
+    max-height: 500px !important;
+  }
+  #fc-floating-btn {
+    right: 16px !important;
+    bottom: 16px !important;
+  }
+  .fc-tab {
+    font-size: 10px !important;
+  }
+}
