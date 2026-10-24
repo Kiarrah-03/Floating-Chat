@@ -11,63 +11,57 @@
   const shadow = root.attachShadow({ mode: "open" });
 
   // ============================================================
-  // ICONS
+  // ICONS (Elegant, thin-stroke, refined)
   // ============================================================
   const I = {
-    // --- NEW MINIMAL LOGO ---
-    logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.8214 2.48697 15.5291 3.33782 17L2.5 21.5L7 20.6622C8.47087 21.513 10.1786 22 12 22Z" fill="currentColor" fill-opacity="0.15"/><path d="M8 12H16M8 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 16L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
-    
-    media: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg>`,
-    groups: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-    shares: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
-    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-    close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>`,
+    logo: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 13.8214 2.48697 15.5291 3.33782 17L2.5 21.5L7 20.6622C8.47087 21.513 10.1786 22 12 22Z" fill="currentColor" fill-opacity="0.1"/><path d="M8 12H16M8 8H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M18 16L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>`,
+    chat: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`,
+    media: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3V9z"/></svg>`,
+    groups: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    shares: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    tools: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    close: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>`,
     send: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.4 20.4 20.85 12 3.4 3.6l.01 6.53L15 12 3.41 13.87z"/></svg>`,
-    snippet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h5M18 9V4h-5M6 15v5h5M18 15v5h-5"/></svg>`,
-    notes: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
-    color: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.9-.1 2.9-.3.4-.1.6-.4.6-.8 0-.2-.1-.4-.2-.6-.2-.4-.3-.8-.3-1.2 0-1.7 1.3-3.1 3-3.1h1.9c1.7 0 3.1-1.4 3.1-3.1C22 6.9 17.5 2 12 2z"/></svg>`,
-    camera: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
-    link: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
-    trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>`,
-    copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
-    download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`,
-    image: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>`,
+    snippet: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V4h5M18 9V4h-5M6 15v5h5M18 15v5h-5"/></svg>`,
+    notes: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>`,
+    color: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.9-.1 2.9-.3.4-.1.6-.4.6-.8 0-.2-.1-.4-.2-.6-.2-.4-.3-.8-.3-1.2 0-1.7 1.3-3.1 3-3.1h1.9c1.7 0 3.1-1.4 3.1-3.1C22 6.9 17.5 2 12 2z"/></svg>`,
+    camera: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>`,
+    link: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    trash: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/></svg>`,
+    copy: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`,
+    download: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>`,
+    image: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>`,
     drag: `<svg viewBox="0 0 24 24" fill="currentColor"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>`,
+    // --- NEW ICON FOR HIGHLIGHT ---
+    highlight: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11-6 6v3h9l3-3"/><path d="m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4"/></svg>`
   };
 
   // ============================================================
-  // CSS
+  // CSS (Classy, Sophisticated Light Theme)
   // ============================================================
   const style = document.createElement("style");
   style.textContent = `
     :host {
       all: initial;
       --fc-bg: #ffffff;
-      --fc-surface: rgba(255, 255, 255, 0.85);
+      --fc-surface: rgba(250, 250, 250, 0.85);
       --fc-surface-solid: #ffffff;
-      --fc-surface-hover: #f8fafc;
-      --fc-border: #e2e8f0;
-      --fc-border-hover: #cbd5e1;
-      --fc-text: #0f172a;
-      --fc-text-soft: #475569;
-      --fc-text-mute: #94a3b8;
-      
-      --fc-accent-1: #6366f1;
-      --fc-accent-2: #06b6d4;
-      --fc-accent-glow: rgba(99, 102, 241, 0.35);
-      --fc-accent-soft: #e0e7ff;
-      
+      --fc-surface-hover: #f4f4f5;
+      --fc-border: #e4e4e7;
+      --fc-border-hover: #d4d4d8;
+      --fc-text: #18181b;
+      --fc-text-soft: #52525b;
+      --fc-text-mute: #a1a1aa;
+      --fc-accent: #18181b; 
+      --fc-accent-soft: #f4f4f5;
       --fc-success: #10b981;
       --fc-danger: #ef4444;
-      
-      --fc-radius-lg: 24px;
-      --fc-radius: 14px;
+      --fc-radius-lg: 16px;
+      --fc-radius: 12px;
       --fc-radius-sm: 8px;
-      
-      --fc-shadow-lg: 0 24px 64px -12px rgba(15, 23, 42, 0.15), 0 4px 16px -4px rgba(15, 23, 42, 0.05);
-      --fc-shadow-md: 0 8px 24px -8px rgba(15, 23, 42, 0.1);
-      --fc-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
-      
+      --fc-shadow-lg: 0 10px 40px -10px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.03);
+      --fc-shadow-md: 0 4px 12px -4px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+      --fc-shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
       --fc-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
       --fc-mono: ui-monospace, "SF Mono", Menlo, monospace;
       --fc-ease: cubic-bezier(0.32, 0.72, 0, 1);
@@ -81,20 +75,21 @@
        ============================================================ */
     #fc-fab {
       position: fixed; bottom: 24px; right: 24px;
-      width: 60px; height: 60px; border-radius: 50%;
-      border: 2px solid rgba(255,255,255,0.8);
-      background: radial-gradient(120% 120% at 30% 0%, rgba(255,255,255,0.4), transparent 50%), linear-gradient(135deg, var(--fc-accent-1), var(--fc-accent-2));
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 1px solid rgba(0,0,0,0.08);
+      background: var(--fc-accent); 
       color: #fff; cursor: grab;
       z-index: 2147483646;
-      box-shadow: 0 12px 32px -8px var(--fc-accent-glow), 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.1);
       display: flex; align-items: center; justify-content: center;
-      transition: transform 0.25s var(--fc-spring), box-shadow 0.25s var(--fc-ease);
+      transition: transform 0.25s var(--fc-spring), box-shadow 0.25s var(--fc-ease), background 0.2s;
       user-select: none; touch-action: none; padding: 0;
     }
-    #fc-fab svg { width: 30px; height: 30px; }
+    #fc-fab svg { width: 26px; height: 26px; }
     #fc-fab:hover {
-      transform: translateY(-3px) scale(1.06);
-      box-shadow: 0 18px 40px -8px var(--fc-accent-glow), 0 6px 16px rgba(0,0,0,0.2);
+      transform: translateY(-2px) scale(1.04);
+      background: #000;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1);
     }
     #fc-fab:active { cursor: grabbing; transform: scale(0.96); }
     #fc-fab.fc-dragging { transition: none; }
@@ -105,34 +100,27 @@
     #fc-panel {
       position: fixed;
       top: 100px; right: 24px;
-      width: 480px; height: 560px;
-      min-width: 380px; min-height: 420px;
+      width: 500px; height: 600px;
+      min-width: 400px; min-height: 450px;
       max-width: calc(100vw - 20px); max-height: calc(100vh - 20px);
       
       background: var(--fc-surface);
-      backdrop-filter: blur(32px) saturate(180%);
-      -webkit-backdrop-filter: blur(32px) saturate(180%);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
       
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.06);
       border-radius: var(--fc-radius-lg);
       box-shadow: var(--fc-shadow-lg);
       z-index: 2147483647;
       
       display: flex; flex-direction: column; overflow: hidden;
-      color: var(--fc-text); font-size: 13.5px; line-height: 1.5;
-      animation: fc-in 0.35s var(--fc-ease);
+      color: var(--fc-text); font-size: 14px; line-height: 1.6;
+      animation: fc-in 0.3s var(--fc-ease);
       isolation: isolate;
     }
     
-    #fc-panel::before {
-      content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: -1;
-      background: 
-        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 100% 100%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
-    }
-
     @keyframes fc-in {
-      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      from { opacity: 0; transform: scale(0.98) translateY(8px); }
       to   { opacity: 1; transform: scale(1) translateY(0); }
     }
     #fc-panel.fc-dragging, #fc-panel.fc-resizing { animation: none; }
@@ -141,68 +129,68 @@
        HEADER
        ============================================================ */
     #fc-header {
-      display: flex; align-items: center; gap: 12px;
-      padding: 16px 20px;
+      display: flex; align-items: center; gap: 14px;
+      padding: 18px 24px;
       border-bottom: 1px solid var(--fc-border);
       flex-shrink: 0;
       cursor: grab; user-select: none; touch-action: none;
-      background: rgba(255,255,255,0.4);
+      background: var(--fc-surface-solid);
     }
     #fc-header:active { cursor: grabbing; }
     #fc-brand { display: flex; align-items: center; gap: 12px; pointer-events: none; flex: 1; min-width: 0; }
     
     #fc-brand-mark {
-      width: 38px; height: 38px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--fc-accent-1), var(--fc-accent-2));
-      display: flex; align-items: center; justify-content: center; color: #fff;
-      box-shadow: 0 4px 12px -4px var(--fc-accent-glow); flex-shrink: 0;
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--fc-accent-soft);
+      display: flex; align-items: center; justify-content: center; color: var(--fc-text);
+      flex-shrink: 0;
     }
-    #fc-brand-mark svg { width: 22px; height: 22px; }
+    #fc-brand-mark svg { width: 20px; height: 20px; }
     
     #fc-brand-copy { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-    #fc-brand-copy strong { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; color: var(--fc-text); }
-    #fc-brand-copy small { font-size: 11.5px; color: var(--fc-text-soft); display: flex; align-items: center; gap: 5px; font-weight: 500; }
-    #fc-status { width: 6px; height: 6px; border-radius: 50%; background: var(--fc-success); box-shadow: 0 0 0 3px rgba(16,185,129,0.15); }
+    #fc-brand-copy strong { font-size: 15px; font-weight: 600; letter-spacing: -0.2px; color: var(--fc-text); }
+    #fc-brand-copy small { font-size: 11.5px; color: var(--fc-text-soft); display: flex; align-items: center; gap: 6px; font-weight: 500; }
+    #fc-status { width: 6px; height: 6px; border-radius: 50%; background: var(--fc-success); }
     
-    #fc-header-actions { display: flex; gap: 6px; }
+    #fc-header-actions { display: flex; gap: 4px; }
     .fc-icon-btn {
-      width: 32px; height: 32px; border-radius: 10px; background: transparent; border: 1px solid transparent;
+      width: 32px; height: 32px; border-radius: 8px; background: transparent; border: 1px solid transparent;
       color: var(--fc-text-mute); display: flex; align-items: center; justify-content: center;
       cursor: pointer; padding: 0; transition: all 0.2s var(--fc-ease); font-family: inherit;
     }
     .fc-icon-btn svg { width: 16px; height: 16px; }
-    .fc-icon-btn:hover { background: var(--fc-surface-hover); color: var(--fc-text); border-color: var(--fc-border); }
-    #fc-close-btn:hover { background: #fef2f2; color: var(--fc-danger); border-color: #fecaca; }
+    .fc-icon-btn:hover { background: var(--fc-surface-hover); color: var(--fc-text); }
+    #fc-close-btn:hover { background: #fef2f2; color: var(--fc-danger); }
     #fc-mini-drag { cursor: grab; }
     #fc-mini-drag:active { cursor: grabbing; }
 
     /* ============================================================
-       TABS (Top Navigation)
+       TABS (Elegant Top Navigation)
        ============================================================ */
     #fc-tabs {
-      display: flex; gap: 4px; padding: 10px 16px;
+      display: flex; gap: 2px; padding: 12px 24px;
       border-bottom: 1px solid var(--fc-border);
-      background: rgba(255,255,255,0.2);
+      background: var(--fc-surface-solid);
       flex-shrink: 0;
     }
     .fc-tab-btn {
-      flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
-      padding: 8px 12px; border-radius: 10px; border: none; background: transparent;
-      color: var(--fc-text-mute); font-size: 12px; font-weight: 600;
+      flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 10px 12px; border-radius: 8px; border: none; background: transparent;
+      color: var(--fc-text-soft); font-size: 12.5px; font-weight: 500;
       cursor: pointer; transition: all 0.2s var(--fc-ease); font-family: inherit;
     }
-    .fc-tab-btn svg { width: 15px; height: 15px; }
-    .fc-tab-btn:hover { background: var(--fc-surface-hover); color: var(--fc-text-soft); }
+    .fc-tab-btn svg { width: 16px; height: 16px; opacity: 0.7; }
+    .fc-tab-btn:hover { background: var(--fc-surface-hover); color: var(--fc-text); }
     .fc-tab-btn.active {
-      background: var(--fc-surface-solid); color: var(--fc-accent-1);
-      box-shadow: var(--fc-shadow-sm); border: 1px solid var(--fc-border);
+      background: var(--fc-accent-soft); color: var(--fc-text); font-weight: 600;
     }
+    .fc-tab-btn.active svg { opacity: 1; }
 
     /* ============================================================
        CONTENT AREA
        ============================================================ */
     #fc-content {
-      flex: 1; min-height: 0; display: flex; flex-direction: column;
+      flex: 1; min-height: 0; display: flex; flex-direction: column; background: var(--fc-bg);
     }
     .fc-panel { display: none; height: 100%; flex-direction: column; min-height: 0; }
     .fc-panel.active { display: flex; }
@@ -212,150 +200,147 @@
        ============================================================ */
     #fc-messages {
       flex: 1; overflow-y: auto; min-height: 0;
-      padding: 20px;
-      display: flex; flex-direction: column; gap: 16px;
+      padding: 24px;
+      display: flex; flex-direction: column; gap: 20px;
       scroll-behavior: smooth;
     }
-    #fc-messages::-webkit-scrollbar { width: 10px; }
-    #fc-messages::-webkit-scrollbar-thumb { background: transparent; border-radius: 8px; border: 3px solid transparent; background-clip: padding-box; }
-    #fc-messages:hover::-webkit-scrollbar-thumb { background: var(--fc-border-hover); background-clip: padding-box; }
+    #fc-messages::-webkit-scrollbar { width: 6px; }
+    #fc-messages::-webkit-scrollbar-thumb { background: transparent; border-radius: 8px; }
+    #fc-messages:hover::-webkit-scrollbar-thumb { background: var(--fc-border-hover); }
 
     .fc-msg {
-      display: flex; flex-direction: column; gap: 4px; max-width: 85%;
-      animation: fc-msg-in 0.32s var(--fc-spring);
+      display: flex; flex-direction: column; gap: 6px; max-width: 80%;
+      animation: fc-msg-in 0.3s var(--fc-spring);
     }
     @keyframes fc-msg-in {
-      from { opacity: 0; transform: translateY(8px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
     .fc-msg.user { align-self: flex-end; align-items: flex-end; }
     .fc-msg.bot  { align-self: flex-start; align-items: flex-start; }
 
     .fc-bubble {
-      padding: 11px 16px; border-radius: 18px;
-      font-size: 13.5px; line-height: 1.5;
+      padding: 12px 18px; border-radius: 18px;
+      font-size: 14px; line-height: 1.5;
       word-wrap: break-word; overflow-wrap: anywhere;
-      border: 1px solid transparent;
     }
     .fc-msg.user .fc-bubble {
-      background: linear-gradient(135deg, var(--fc-accent-1), var(--fc-accent-2));
-      color: #fff; border-bottom-right-radius: 4px;
-      box-shadow: 0 4px 12px -4px var(--fc-accent-glow);
+      background: var(--fc-accent); color: #fff;
+      border-bottom-right-radius: 4px;
     }
     .fc-msg.bot .fc-bubble {
-      background: var(--fc-surface-solid); color: var(--fc-text);
-      border-color: var(--fc-border); border-bottom-left-radius: 4px;
-      box-shadow: var(--fc-shadow-sm);
+      background: var(--fc-surface-hover); color: var(--fc-text);
+      border: 1px solid var(--fc-border);
+      border-bottom-left-radius: 4px;
     }
     .fc-meta {
-      font-size: 11px; color: var(--fc-text-mute); padding: 0 4px; font-weight: 500;
+      font-size: 11px; color: var(--fc-text-mute); padding: 0 4px; font-weight: 400;
     }
 
     /* ============================================================
        COMPOSER
        ============================================================ */
     #fc-composer {
-      flex-shrink: 0; padding: 16px 20px 20px;
-      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.8));
+      flex-shrink: 0; padding: 16px 24px 24px;
+      background: var(--fc-bg);
     }
     #fc-composer-inner {
-      display: flex; align-items: flex-end; gap: 8px;
+      display: flex; align-items: flex-end; gap: 12px;
       background: var(--fc-surface-solid);
       border: 1px solid var(--fc-border);
-      border-radius: 20px; padding: 6px 6px 6px 16px;
+      border-radius: 16px; padding: 8px 8px 8px 18px;
       box-shadow: var(--fc-shadow-sm);
-      transition: border-color 0.2s var(--fc-ease), box-shadow 0.2s var(--fc-ease);
+      transition: border-color 0.2s var(--fc-ease);
     }
     #fc-composer-inner:focus-within {
-      border-color: var(--fc-accent-1);
-      box-shadow: 0 0 0 4px var(--fc-accent-soft);
+      border-color: var(--fc-text-soft);
     }
     #fc-input {
       flex: 1; min-width: 0; border: none; outline: none; resize: none;
       background: transparent; color: var(--fc-text);
-      font-size: 13.5px; line-height: 1.5; font-family: inherit;
-      padding: 10px 0; max-height: 120px; min-height: 20px;
+      font-size: 14px; line-height: 1.5; font-family: inherit;
+      padding: 8px 0; max-height: 120px; min-height: 24px;
     }
     #fc-input::placeholder { color: var(--fc-text-mute); }
     #fc-send {
-      flex-shrink: 0; width: 38px; height: 38px; border-radius: 14px;
-      border: none; background: linear-gradient(135deg, var(--fc-accent-1), var(--fc-accent-2));
+      flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
+      border: none; background: var(--fc-accent);
       color: #fff; cursor: pointer;
       display: flex; align-items: center; justify-content: center; padding: 0;
-      box-shadow: 0 4px 12px -4px var(--fc-accent-glow);
-      transition: transform 0.2s var(--fc-spring), filter 0.2s;
+      transition: transform 0.2s var(--fc-spring), background 0.2s;
     }
-    #fc-send svg { width: 16px; height: 16px; }
-    #fc-send:hover { transform: translateY(-1px) scale(1.04); filter: brightness(1.1); }
+    #fc-send svg { width: 16px; height: 16px; transform: translateX(-1px); }
+    #fc-send:hover { background: #000; transform: scale(1.04); }
     #fc-send:active { transform: scale(0.94); }
 
     /* ============================================================
        DROP ZONES
        ============================================================ */
     .fc-drop {
-      margin: 20px; padding: 30px 20px;
+      margin: 24px; padding: 36px 24px;
       border: 1.5px dashed var(--fc-border-hover);
-      border-radius: 16px; background: rgba(255,255,255,0.4);
+      border-radius: 16px; background: var(--fc-surface-solid);
       text-align: center; color: var(--fc-text-soft);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       transition: all 0.2s var(--fc-ease);
     }
-    .fc-drop:hover { border-color: var(--fc-accent-1); background: var(--fc-surface-solid); }
+    .fc-drop:hover { border-color: var(--fc-text-soft); background: var(--fc-surface-hover); }
     .fc-drop-icon {
       width: 56px; height: 56px; border-radius: 16px;
-      background: var(--fc-accent-soft); color: var(--fc-accent-1);
+      background: var(--fc-surface-hover); color: var(--fc-text-soft);
+      border: 1px solid var(--fc-border);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; box-shadow: var(--fc-shadow-sm);
+      margin-bottom: 16px;
     }
     .fc-drop-icon svg { width: 24px; height: 24px; }
-    .fc-drop h3 { margin: 0 0 6px; color: var(--fc-text); font-size: 14px; font-weight: 700; }
-    .fc-drop p { margin: 0; font-size: 12.5px; line-height: 1.5; color: var(--fc-text-mute); max-width: 240px; }
+    .fc-drop h3 { margin: 0 0 8px; color: var(--fc-text); font-size: 15px; font-weight: 600; }
+    .fc-drop p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--fc-text-mute); max-width: 240px; }
 
     .fc-btn-ghost {
-      margin-top: 16px; background: var(--fc-surface-solid); color: var(--fc-text);
-      border: 1px solid var(--fc-border); border-radius: 10px; padding: 8px 16px;
-      font-size: 12px; font-weight: 600; cursor: pointer;
+      margin-top: 20px; background: var(--fc-surface-solid); color: var(--fc-text);
+      border: 1px solid var(--fc-border); border-radius: 8px; padding: 10px 18px;
+      font-size: 13px; font-weight: 500; cursor: pointer;
       display: inline-flex; align-items: center; gap: 8px;
       transition: all 0.15s var(--fc-ease); font-family: inherit;
-      box-shadow: var(--fc-shadow-sm);
     }
-    .fc-btn-ghost:hover { border-color: var(--fc-accent-1); color: var(--fc-accent-1); background: var(--fc-surface-hover); }
+    .fc-btn-ghost:hover { border-color: var(--fc-text-soft); background: var(--fc-surface-hover); }
     .fc-btn-ghost svg { width: 14px; height: 14px; }
 
     /* ============================================================
        SAVED ITEMS
        ============================================================ */
-    .fc-list { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 12px; }
+    .fc-list { padding: 0 24px 24px; display: flex; flex-direction: column; gap: 12px; }
     .fc-card {
       background: var(--fc-surface-solid); border: 1px solid var(--fc-border);
-      border-radius: 14px; overflow: hidden;
+      border-radius: 12px; overflow: hidden;
       transition: all 0.2s var(--fc-ease); box-shadow: var(--fc-shadow-sm);
     }
     .fc-card:hover {
-      border-color: var(--fc-border-hover); transform: translateY(-2px);
+      border-color: var(--fc-border-hover); transform: translateY(-1px);
       box-shadow: var(--fc-shadow-md);
     }
     .fc-card-thumb {
-      width: 100%; aspect-ratio: 16/9; display: block; border: none; object-fit: cover; background: #e2e8f0;
+      width: 100%; aspect-ratio: 16/9; display: block; border: none; object-fit: cover; background: #f4f4f5;
     }
     .fc-card-thumb-fallback {
       width: 100%; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
-      background: var(--fc-accent-soft); color: var(--fc-accent-1);
+      background: var(--fc-surface-hover); color: var(--fc-text-mute);
     }
-    .fc-card-thumb-fallback svg { width: 40px; height: 40px; opacity: 0.8; }
-    .fc-card-body { padding: 12px 14px; display: flex; align-items: center; gap: 10px; }
+    .fc-card-thumb-fallback svg { width: 32px; height: 32px; }
+    .fc-card-body { padding: 14px 16px; display: flex; align-items: center; gap: 12px; }
     .fc-badge {
-      background: var(--fc-accent-soft); color: var(--fc-accent-1);
-      border-radius: 6px; padding: 3px 8px; font-size: 9px; font-weight: 800;
+      background: var(--fc-surface-hover); color: var(--fc-text-soft);
+      border: 1px solid var(--fc-border);
+      border-radius: 6px; padding: 2px 8px; font-size: 10px; font-weight: 600;
       text-transform: uppercase; letter-spacing: 0.5px; flex-shrink: 0;
     }
     .fc-card-title {
-      color: var(--fc-text); font-size: 13px; font-weight: 600;
+      color: var(--fc-text); font-size: 13px; font-weight: 500;
       white-space: nowrap; overflow: hidden; text-overflow: ellipsis; flex: 1; min-width: 0;
     }
     .fc-del {
       background: transparent; border: none; color: var(--fc-text-mute); cursor: pointer;
-      padding: 6px; border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      padding: 6px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; transition: all 0.15s var(--fc-ease);
     }
     .fc-del svg { width: 14px; height: 14px; }
@@ -369,53 +354,50 @@
       text-align: center; padding: 40px 30px; color: var(--fc-text-soft);
     }
     .fc-empty-icon {
-      width: 72px; height: 72px; border-radius: 24px; background: var(--fc-surface-solid);
+      width: 64px; height: 64px; border-radius: 16px; background: var(--fc-surface-hover);
       border: 1px solid var(--fc-border); color: var(--fc-text-mute);
       display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; box-shadow: var(--fc-shadow-sm);
+      margin-bottom: 16px;
     }
-    .fc-empty-icon svg { width: 32px; height: 32px; }
-    .fc-empty h3 { margin: 0 0 8px; color: var(--fc-text); font-size: 16px; font-weight: 700; }
+    .fc-empty-icon svg { width: 28px; height: 28px; }
+    .fc-empty h3 { margin: 0 0 6px; color: var(--fc-text); font-size: 16px; font-weight: 600; }
     .fc-empty p { margin: 0; font-size: 13px; line-height: 1.5; max-width: 260px; }
 
     /* ============================================================
        TOOLS GRID
        ============================================================ */
     #fc-tools-scroll { flex: 1; overflow-y: auto; min-height: 0; }
-    #fc-tools-scroll::-webkit-scrollbar { width: 10px; }
-    #fc-tools-scroll::-webkit-scrollbar-thumb { background: transparent; border-radius: 8px; border: 3px solid transparent; background-clip: padding-box; }
-    #fc-tools-scroll:hover::-webkit-scrollbar-thumb { background: var(--fc-border-hover); background-clip: padding-box; }
+    #fc-tools-scroll::-webkit-scrollbar { width: 6px; }
+    #fc-tools-scroll::-webkit-scrollbar-thumb { background: transparent; border-radius: 8px; }
+    #fc-tools-scroll:hover::-webkit-scrollbar-thumb { background: var(--fc-border-hover); }
 
-    .fc-tools-wrap { padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .fc-tools-wrap { padding: 24px; display: flex; flex-direction: column; gap: 12px; }
     .fc-tool {
       background: var(--fc-surface-solid); border: 1px solid var(--fc-border);
-      border-radius: 16px; padding: 16px; display: flex; align-items: center; gap: 14px;
+      border-radius: 12px; padding: 16px; display: flex; align-items: center; gap: 16px;
       transition: all 0.2s var(--fc-ease); box-shadow: var(--fc-shadow-sm);
     }
     .fc-tool:hover {
-      border-color: var(--fc-border-hover); transform: translateY(-1px); box-shadow: var(--fc-shadow-md);
+      border-color: var(--fc-border-hover); box-shadow: var(--fc-shadow-md);
     }
     .fc-tool-chip {
-      width: 42px; height: 42px; border-radius: 12px;
+      width: 44px; height: 44px; border-radius: 10px;
       display: flex; align-items: center; justify-content: center;
       border: 1px solid var(--fc-border); background: var(--fc-surface-hover);
       color: var(--fc-text-soft); flex-shrink: 0;
-      transition: all 0.2s var(--fc-ease);
     }
     .fc-tool-chip svg { width: 20px; height: 20px; }
-    .fc-tool:hover .fc-tool-chip { color: var(--fc-accent-1); border-color: var(--fc-accent-soft); background: var(--fc-accent-soft); }
     .fc-tool-info { flex: 1; min-width: 0; }
-    .fc-tool-info h3 { margin: 0 0 3px; color: var(--fc-text); font-size: 14px; font-weight: 700; }
-    .fc-tool-info p { margin: 0; color: var(--fc-text-mute); font-size: 12px; line-height: 1.4; }
+    .fc-tool-info h3 { margin: 0 0 4px; color: var(--fc-text); font-size: 14px; font-weight: 600; }
+    .fc-tool-info p { margin: 0; color: var(--fc-text-mute); font-size: 12.5px; line-height: 1.4; }
     .fc-tool-action {
-      border: 1px solid var(--fc-border); border-radius: 10px; padding: 8px 14px;
+      border: 1px solid var(--fc-border); border-radius: 8px; padding: 8px 16px;
       background: var(--fc-surface-solid); color: var(--fc-text);
-      font-size: 12px; font-weight: 600; cursor: pointer; flex-shrink: 0;
+      font-size: 12.5px; font-weight: 500; cursor: pointer; flex-shrink: 0;
       display: inline-flex; align-items: center; gap: 6px;
       transition: all 0.15s var(--fc-ease); font-family: inherit; white-space: nowrap;
-      box-shadow: var(--fc-shadow-sm);
     }
-    .fc-tool-action:hover:not(:disabled) { border-color: var(--fc-accent-1); color: var(--fc-accent-1); background: var(--fc-surface-hover); }
+    .fc-tool-action:hover:not(:disabled) { border-color: var(--fc-text-soft); background: var(--fc-surface-hover); }
     .fc-tool-action:disabled { opacity: 0.5; cursor: not-allowed; }
 
     /* ============================================================
@@ -423,7 +405,7 @@
        ============================================================ */
     .fc-expand {
       display: none; background: var(--fc-surface-hover); border: 1px solid var(--fc-border);
-      border-radius: 14px; padding: 16px; margin: -6px 0 4px;
+      border-radius: 12px; padding: 16px; margin: -6px 0 4px;
       animation: fc-expand-in 0.25s var(--fc-ease);
     }
     @keyframes fc-expand-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
@@ -433,11 +415,11 @@
       margin-bottom: 12px;
     }
     .fc-expand-title {
-      font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: var(--fc-text-mute);
+      font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--fc-text-soft);
     }
     .fc-expand-close {
       background: transparent; border: none; color: var(--fc-text-mute); cursor: pointer;
-      padding: 4px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+      padding: 4px; border-radius: 4px; display: flex; align-items: center; justify-content: center;
       transition: all 0.15s var(--fc-ease);
     }
     .fc-expand-close svg { width: 14px; height: 14px; }
@@ -445,116 +427,116 @@
 
     /* Notes Specific */
     #fc-notes-input {
-      width: 100%; height: 120px; border: 1px solid var(--fc-border); border-radius: 12px;
+      width: 100%; height: 140px; border: 1px solid var(--fc-border); border-radius: 8px;
       padding: 12px; font-size: 13px; font-family: var(--fc-mono); resize: vertical; outline: none;
       background: var(--fc-surface-solid); color: var(--fc-text); line-height: 1.5;
-      transition: border-color 0.2s var(--fc-ease), box-shadow 0.2s var(--fc-ease);
+      transition: border-color 0.2s var(--fc-ease);
     }
-    #fc-notes-input:focus { border-color: var(--fc-accent-1); box-shadow: 0 0 0 3px var(--fc-accent-soft); }
+    #fc-notes-input:focus { border-color: var(--fc-text-soft); }
     .fc-notes-footer {
       display: flex; justify-content: space-between; align-items: center; margin-top: 12px;
     }
     .fc-save-status { font-size: 11.5px; color: var(--fc-text-mute); display: flex; align-items: center; gap: 6px; font-weight: 500; }
     .fc-save-status.saved { color: var(--fc-success); }
     .fc-save-btn {
-      background: var(--fc-text); color: #fff; border: none; border-radius: 10px;
-      padding: 8px 16px; font-size: 12px; font-weight: 600; cursor: pointer;
+      background: var(--fc-accent); color: #fff; border: none; border-radius: 6px;
+      padding: 8px 16px; font-size: 12px; font-weight: 500; cursor: pointer;
       display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s var(--fc-ease);
     }
-    .fc-save-btn:hover { background: #000; transform: translateY(-1px); }
+    .fc-save-btn:hover { background: #000; }
     .fc-save-btn svg { width: 14px; height: 14px; }
 
     /* Results */
     .fc-result { text-align: center; }
-    .fc-result img { width: 100%; max-height: 180px; object-fit: contain; border-radius: 10px; border: 1px solid var(--fc-border); display: block; margin-bottom: 12px; background: #000; }
-    .fc-result-status { margin: 0 0 12px; font-weight: 700; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .fc-result img { width: 100%; max-height: 180px; object-fit: contain; border-radius: 8px; border: 1px solid var(--fc-border); display: block; margin-bottom: 12px; background: #f4f4f5; }
+    .fc-result-status { margin: 0 0 12px; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 6px; }
     .fc-result-status.ok { color: var(--fc-success); }
     .fc-result-status.err { color: var(--fc-danger); }
 
     .fc-download {
       display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
-      padding: 10px 16px; border-radius: 10px; background: var(--fc-accent-soft); color: var(--fc-accent-1);
-      font-weight: 600; font-size: 12px; transition: all 0.15s var(--fc-ease); justify-content: center;
+      padding: 10px 16px; border-radius: 8px; background: var(--fc-accent); color: #fff;
+      font-weight: 500; font-size: 12.5px; transition: all 0.15s var(--fc-ease); justify-content: center;
     }
-    .fc-download:hover { background: #d8dbff; transform: translateY(-1px); }
+    .fc-download:hover { background: #000; }
     .fc-download svg { width: 14px; height: 14px; }
 
     /* Color Picker */
-    .fc-color-hero { height: 80px; border-radius: 12px; border: 1px solid var(--fc-border); margin-bottom: 12px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05); }
-    .fc-color-row { display: flex; align-items: center; gap: 10px; }
-    .fc-color-hex { flex: 1; font-family: var(--fc-mono); font-size: 14px; font-weight: 600; color: var(--fc-text); background: var(--fc-surface-solid); border: 1px solid var(--fc-border); border-radius: 10px; padding: 10px 14px; }
+    .fc-color-hero { height: 100px; border-radius: 8px; border: 1px solid var(--fc-border); margin-bottom: 12px; }
+    .fc-color-row { display: flex; align-items: center; gap: 12px; }
+    .fc-color-hex { flex: 1; font-family: var(--fc-mono); font-size: 14px; font-weight: 500; color: var(--fc-text); background: var(--fc-surface-solid); border: 1px solid var(--fc-border); border-radius: 8px; padding: 10px 14px; }
 
     /* Progress */
-    .fc-progress { width: 100%; height: 6px; border-radius: 4px; background: var(--fc-border); overflow: hidden; margin-top: 12px; }
-    .fc-progress-bar { height: 100%; background: linear-gradient(90deg, var(--fc-accent-1), var(--fc-accent-2)); width: 0%; transition: width 0.25s var(--fc-ease); }
-    .fc-progress-label { font-size: 11.5px; color: var(--fc-text-soft); margin-top: 8px; text-align: center; font-weight: 500; }
+    .fc-progress { width: 100%; height: 6px; border-radius: 4px; background: var(--fc-border); overflow: hidden; margin-top: 16px; }
+    .fc-progress-bar { height: 100%; background: var(--fc-accent); width: 0%; transition: width 0.25s var(--fc-ease); }
+    .fc-progress-label { font-size: 12px; color: var(--fc-text-soft); margin-top: 8px; text-align: center; font-weight: 500; }
 
     /* ============================================================
        RESIZE GRIP
        ============================================================ */
     #fc-grip {
-      position: absolute; bottom: 0; right: 0; width: 28px; height: 28px;
+      position: absolute; bottom: 0; right: 0; width: 24px; height: 24px;
       cursor: nwse-resize; z-index: 5; display: flex; align-items: flex-end; justify-content: flex-end;
-      padding: 6px; touch-action: none;
+      padding: 4px; touch-action: none;
     }
     #fc-grip::before {
-      content: ""; width: 8px; height: 8px; border-right: 2px solid var(--fc-border-hover);
-      border-bottom: 2px solid var(--fc-border-hover); border-radius: 0 0 4px 0;
+      content: ""; width: 8px; height: 8px; border-right: 1.5px solid var(--fc-text-mute);
+      border-bottom: 1.5px solid var(--fc-text-mute); border-radius: 0 0 3px 0;
       transition: border-color 0.2s;
     }
-    #fc-grip:hover::before { border-color: var(--fc-accent-1); }
+    #fc-grip:hover::before { border-color: var(--fc-accent); }
 
     /* ============================================================
        SCREENSHOT OVERLAY
        ============================================================ */
-    #fc-shot-overlay { position: fixed; inset: 0; background: rgba(15,23,42,0.6); backdrop-filter: blur(2px); z-index: 2147483647; cursor: crosshair; user-select: none; }
+    #fc-shot-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.4); backdrop-filter: blur(2px); z-index: 2147483647; cursor: crosshair; user-select: none; }
     #fc-shot-box {
-      position: absolute; border: 2px solid var(--fc-accent-2); background: rgba(6,182,212,0.15); display: none;
-      box-shadow: 0 0 0 9999px rgba(15,23,42,0.6), 0 0 20px rgba(6,182,212,0.4);
+      position: absolute; border: 1.5px solid #fff; background: rgba(255,255,255,0.1); display: none;
+      box-shadow: 0 0 0 9999px rgba(0,0,0,0.4);
     }
 
     /* ============================================================
        DROP HINT
        ============================================================ */
     #fc-drop-hint {
-      position: fixed; inset: 0; background: rgba(99,102,241,0.05); border: 3px dashed var(--fc-accent-1);
+      position: fixed; inset: 0; background: rgba(0,0,0,0.1); border: 3px dashed var(--fc-text);
       z-index: 2147483647; display: flex; align-items: center; justify-content: center;
       pointer-events: none; animation: fc-fade-in 0.2s var(--fc-ease);
     }
     @keyframes fc-fade-in { from { opacity: 0; } to { opacity: 1; } }
     #fc-drop-hint-inner {
-      background: var(--fc-surface-solid); color: var(--fc-text); padding: 16px 28px; border-radius: 16px;
-      font-size: 15px; font-weight: 700; border: 1px solid var(--fc-border); box-shadow: var(--fc-shadow-lg);
+      background: var(--fc-surface-solid); color: var(--fc-text); padding: 16px 28px; border-radius: 12px;
+      font-size: 15px; font-weight: 600; border: 1px solid var(--fc-border); box-shadow: var(--fc-shadow-lg);
       display: flex; align-items: center; gap: 12px;
     }
-    #fc-drop-hint-inner svg { width: 20px; height: 20px; color: var(--fc-accent-1); }
+    #fc-drop-hint-inner svg { width: 20px; height: 20px; }
 
     /* ============================================================
        SAVE DIALOG
        ============================================================ */
     #fc-save {
-      position: absolute; inset: 0; background: rgba(15,23,42,0.4); backdrop-filter: blur(4px);
+      position: absolute; inset: 0; background: rgba(0,0,0,0.3); backdrop-filter: blur(4px);
       z-index: 100; display: flex; align-items: center; justify-content: center;
       animation: fc-fade-in 0.2s var(--fc-ease);
     }
     .fc-save-card {
-      background: var(--fc-surface-solid); border: 1px solid var(--fc-border); border-radius: 20px;
+      background: var(--fc-surface-solid); border: 1px solid var(--fc-border); border-radius: 16px;
       padding: 24px; width: 85%; max-width: 320px; text-align: center;
       box-shadow: var(--fc-shadow-lg); animation: fc-in 0.3s var(--fc-spring);
     }
-    .fc-save-card h3 { margin: 0 0 10px; font-size: 15px; color: var(--fc-text); font-weight: 700; }
+    .fc-save-card h3 { margin: 0 0 10px; font-size: 15px; color: var(--fc-text); font-weight: 600; }
     #fc-save-url { margin: 0 0 20px; font-size: 12px; color: var(--fc-text-mute); word-break: break-all; line-height: 1.5; }
     .fc-save-actions { display: flex; flex-direction: column; gap: 10px; }
     .fc-save-opt {
-      padding: 12px 16px; border: 1px solid var(--fc-border); border-radius: 12px;
-      background: var(--fc-surface-hover); color: var(--fc-text);
-      font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit;
+      padding: 12px 16px; border: 1px solid var(--fc-border); border-radius: 8px;
+      background: var(--fc-surface-solid); color: var(--fc-text);
+      font-size: 13px; font-weight: 500; cursor: pointer; font-family: inherit;
       display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s var(--fc-ease);
     }
     .fc-save-opt svg { width: 16px; height: 16px; }
-    .fc-save-opt:hover { border-color: var(--fc-accent-1); color: var(--fc-accent-1); background: var(--fc-surface-solid); }
-    .fc-save-opt.primary { background: linear-gradient(135deg, var(--fc-accent-1), var(--fc-accent-2)); border-color: transparent; color: #fff; box-shadow: 0 4px 12px -4px var(--fc-accent-glow); }
-    .fc-save-opt.primary:hover { filter: brightness(1.05); color: #fff; }
+    .fc-save-opt:hover { border-color: var(--fc-text-soft); background: var(--fc-surface-hover); }
+    .fc-save-opt.primary { background: var(--fc-accent); border-color: transparent; color: #fff; }
+    .fc-save-opt.primary:hover { background: #000; }
     .fc-save-cancel { background: transparent; border: none; color: var(--fc-text-mute); font-size: 12.5px; font-weight: 500; cursor: pointer; margin-top: 8px; padding: 8px; font-family: inherit; transition: color 0.15s; }
     .fc-save-cancel:hover { color: var(--fc-text); }
 
@@ -562,20 +544,20 @@
        TOAST
        ============================================================ */
     .fc-toast {
-      position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%);
-      background: var(--fc-text); color: #fff; padding: 12px 20px; border-radius: 12px;
-      font-size: 13px; font-weight: 500; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: fixed; bottom: 96px; left: 50%; transform: translateX(-50%);
+      background: var(--fc-text); color: #fff; padding: 12px 20px; border-radius: 10px;
+      font-size: 13px; font-weight: 500; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       z-index: 2147483647; display: flex; align-items: center; gap: 10px; max-width: calc(100vw - 40px);
       pointer-events: none; animation: fc-toast-in 0.3s var(--fc-spring);
     }
-    .fc-toast-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fc-accent-2); box-shadow: 0 0 8px var(--fc-accent-2); flex-shrink: 0; }
+    .fc-toast-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fc-bg); flex-shrink: 0; }
     @keyframes fc-toast-in { from { opacity: 0; transform: translateX(-50%) translateY(16px) scale(0.95); } to { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); } }
     .fc-toast.out { animation: fc-toast-out 0.25s var(--fc-ease) forwards; }
     @keyframes fc-toast-out { to { opacity: 0; transform: translateX(-50%) translateY(12px) scale(0.96); } }
 
     @media (max-width: 520px) {
-      #fc-panel { max-width: calc(100vw - 12px) !important; border-radius: 16px; }
-      .fc-tab-btn { padding: 8px 4px; font-size: 11px; }
+      #fc-panel { max-width: calc(100vw - 12px) !important; border-radius: 12px; }
+      .fc-tab-btn { padding: 10px 4px; font-size: 11px; }
       .fc-tab-btn svg { display: none; }
     }
   `;
@@ -606,7 +588,7 @@
       </div>
 
       <div id="fc-tabs">
-        <button class="fc-tab-btn active" data-tab="chats">${I.logo} Chat</button>
+        <button class="fc-tab-btn active" data-tab="chats">${I.chat} Chat</button>
         <button class="fc-tab-btn" data-tab="media">${I.media} Media</button>
         <button class="fc-tab-btn" data-tab="groups">${I.groups} Groups</button>
         <button class="fc-tab-btn" data-tab="shares">${I.shares} Share</button>
@@ -732,13 +714,14 @@
                 <div id="fc-fullshot-body"></div>
               </div>
 
+              <!-- REPLACED: Highlight Text tool -->
               <div class="fc-tool">
-                <div class="fc-tool-chip">${I.link}</div>
+                <div class="fc-tool-chip">${I.highlight}</div>
                 <div class="fc-tool-info">
-                  <h3>Copy as Markdown</h3>
-                  <p>Copies [title](url) to clipboard.</p>
+                  <h3>Highlight Text</h3>
+                  <p>Wrap selected text on the page in bright yellow.</p>
                 </div>
-                <button id="fc-md-btn" class="fc-tool-action">Copy</button>
+                <button id="fc-highlight-btn" class="fc-tool-action">Apply</button>
               </div>
             </div>
           </div>
@@ -793,7 +776,9 @@
   const colorResult = $("#fc-color-result");
   const fullshotBtn = $("#fc-fullshot-btn");
   const fullshotResult = $("#fc-fullshot-result");
-  const mdBtn = $("#fc-md-btn");
+  
+  // New highlight ref
+  const highlightBtn = $("#fc-highlight-btn");
 
   const mediaList = $("#fc-media-list");
   const sharesList = $("#fc-shares-list");
@@ -808,8 +793,8 @@
   let currentTab = "chats";
   let pendingMedia = null;
 
-  const DEFAULT_SIZE = { width: 480, height: 560 };
-  const MIN_W = 380, MIN_H = 420;
+  const DEFAULT_SIZE = { width: 500, height: 600 };
+  const MIN_W = 400, MIN_H = 450;
 
   // ============================================================
   // HELPERS
@@ -832,7 +817,7 @@
     const r = panel.getBoundingClientRect();
     const f = fab.getBoundingClientRect();
     try {
-      localStorage.setItem("fc_state_v4", JSON.stringify({
+      localStorage.setItem("fc_state_v6", JSON.stringify({
         left: r.left, top: r.top, width: r.width, height: r.height,
         fabLeft: f.left, fabTop: f.top,
       }));
@@ -858,7 +843,7 @@
     }
   }
   function loadState() {
-    try { applyState(JSON.parse(localStorage.getItem("fc_state_v4") || "null")); } catch (e) {}
+    try { applyState(JSON.parse(localStorage.getItem("fc_state_v6") || "null")); } catch (e) {}
   }
   function resetState() {
     Object.assign(panel.style, {
@@ -866,7 +851,7 @@
       width: DEFAULT_SIZE.width + "px", height: DEFAULT_SIZE.height + "px",
     });
     Object.assign(fab.style, { left: "", top: "", right: "24px", bottom: "24px" });
-    try { localStorage.removeItem("fc_state_v4"); } catch (e) {}
+    try { localStorage.removeItem("fc_state_v6"); } catch (e) {}
     toast("Reset position", "↺");
   }
 
@@ -1070,7 +1055,7 @@
   });
 
   // ============================================================
-  // MEDIA HELPERS
+  // MEDIA HELPERS (Fixed CSP issue)
   // ============================================================
   function detectType(url) {
     if (!url) return "link";
@@ -1097,14 +1082,14 @@
   }
   function saveItems() {
     try {
-      localStorage.setItem("fc_media_v4", JSON.stringify(Array.from(mediaList.children).map((x) => JSON.parse(x.dataset.item))));
-      localStorage.setItem("fc_shares_v4", JSON.stringify(Array.from(sharesList.children).map((x) => JSON.parse(x.dataset.item))));
+      localStorage.setItem("fc_media_v6", JSON.stringify(Array.from(mediaList.children).map((x) => JSON.parse(x.dataset.item))));
+      localStorage.setItem("fc_shares_v6", JSON.stringify(Array.from(sharesList.children).map((x) => JSON.parse(x.dataset.item))));
     } catch (e) {}
   }
   function loadItems() {
     try {
-      JSON.parse(localStorage.getItem("fc_media_v4") || "[]").forEach((i) => renderCard(i, "media"));
-      JSON.parse(localStorage.getItem("fc_shares_v4") || "[]").forEach((i) => renderCard(i, "shares"));
+      JSON.parse(localStorage.getItem("fc_media_v6") || "[]").forEach((i) => renderCard(i, "media"));
+      JSON.parse(localStorage.getItem("fc_shares_v6") || "[]").forEach((i) => renderCard(i, "shares"));
     } catch (e) {}
   }
   function renderCard(item, target) {
@@ -1116,23 +1101,44 @@
     card.className = "fc-card"; card.dataset.item = key;
 
     const label = item.type === "youtube" ? "YouTube" : item.type === "vimeo" ? "Vimeo" : item.type === "image" ? "Image" : item.type === "video-file" ? "Video" : "Link";
-    let thumb;
+    
+    // Safely create the anchor to bypass CSP
+    const anchor = document.createElement("a");
+    anchor.href = item.url;
+    anchor.target = "_blank";
+    anchor.rel = "noreferrer";
+    anchor.style.textDecoration = "none";
+    anchor.style.display = "block";
+
     if (item.thumb) {
-      thumb = `<img class="fc-card-thumb" src="${item.thumb}" alt="" onerror="this.outerHTML='<div class=\\'fc-card-thumb-fallback\\'>${I.image}</div>'"/>`;
+      const img = document.createElement("img");
+      img.className = "fc-card-thumb";
+      img.src = item.thumb;
+      img.alt = "";
+      img.addEventListener("error", () => {
+        const fallback = document.createElement("div");
+        fallback.className = "fc-card-thumb-fallback";
+        fallback.innerHTML = I.image;
+        img.replaceWith(fallback);
+      });
+      anchor.appendChild(img);
     } else {
       const ic = item.type === "video-file" ? I.media : item.type === "youtube" ? I.media : I.link;
-      thumb = `<div class="fc-card-thumb-fallback">${ic}</div>`;
+      anchor.innerHTML = `<div class="fc-card-thumb-fallback">${ic}</div>`;
     }
 
-    card.innerHTML = `
-      <a href="${item.url}" target="_blank" rel="noreferrer" style="text-decoration:none;display:block;">${thumb}</a>
-      <div class="fc-card-body">
-        <span class="fc-badge">${label}</span>
-        <span class="fc-card-title" title="${item.title}">${item.title}</span>
-        <button class="fc-del" title="Remove">${I.trash}</button>
-      </div>
+    const body = document.createElement("div");
+    body.className = "fc-card-body";
+    body.innerHTML = `
+      <span class="fc-badge">${label}</span>
+      <span class="fc-card-title" title="${item.title}">${item.title}</span>
+      <button class="fc-del" title="Remove">${I.trash}</button>
     `;
-    card.querySelector(".fc-del").addEventListener("click", (e) => {
+
+    card.appendChild(anchor);
+    card.appendChild(body);
+
+    body.querySelector(".fc-del").addEventListener("click", (e) => {
       e.preventDefault(); e.stopPropagation();
       card.remove(); saveItems(); toast("Removed");
     });
@@ -1446,16 +1452,26 @@
     }
   });
 
-  // 5. Markdown
-  mdBtn.addEventListener("click", async () => {
-    const md = `[${document.title || "Untitled"}](${location.href})`;
+  // 5. Highlight Text (Replaced Markdown)
+  highlightBtn.addEventListener("click", () => {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0 || sel.toString().trim() === "") {
+      toast("Please select some text on the page first");
+      return;
+    }
     try {
-      await navigator.clipboard.writeText(md); toast("Markdown copied");
-    } catch {
-      const ta = document.createElement("textarea");
-      ta.value = md; document.body.appendChild(ta); ta.select();
-      try { document.execCommand("copy"); toast("Markdown copied"); } catch { toast("Copy failed"); }
-      document.body.removeChild(ta);
+      const range = sel.getRangeAt(0);
+      // Keep it simple: wrap the range
+      const mark = document.createElement("mark");
+      mark.style.backgroundColor = "#fef08a";
+      mark.style.color = "#000";
+      mark.style.borderRadius = "2px";
+      mark.style.padding = "0 2px";
+      range.surroundContents(mark);
+      sel.removeAllRanges();
+      toast("Text highlighted");
+    } catch (e) {
+      toast("Cannot highlight across multiple blocks");
     }
   });
 
